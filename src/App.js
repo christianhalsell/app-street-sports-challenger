@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router, // URL will navigate
+  Routes,
+  Route
+  // MemoryRouter as Router // URL will not navigate
+} from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import HowToUsePage from './pages/HowToUsePage';
