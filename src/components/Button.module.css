@@ -1,0 +1,11 @@
+.button {
+  background-color: var(--score-blue);
+  border-radius: 20px;
+  border-width: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}

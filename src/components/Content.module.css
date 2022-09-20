@@ -1,10 +1,26 @@
 .content {
-  background-image: url(../assets/homeBG.png);
+  /* background-image: url(../assets/homeBG.png); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 10px;
+  padding: 30px 10px;
   text-align: center;
+}
+
+.contentImage {
+  background-image: url(../assets/homeBG.png);
+}
+
+.flexStart {
+  justify-content: flex-start;
+}
+
+.flexCenter {
+  justify-content: center;
+}
+
+.flexEnd {
+  justify-content: flex-end;
 }

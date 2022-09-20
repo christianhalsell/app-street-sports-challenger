@@ -5,9 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  /* Colors */
+  --alert-red: #f00;
+  --score-red: #f73a13;
+  --score-blue: #0378eb;
+  --warning-orange: #eb7603;
+
+  /* Grays */
+  --extra-dark-gray: #181818;
+  --dark-gray: #333;
+  --medium-gray: #666;
+  --light-gray: #ddd;
+  --extra-light-gray: #f7f7f7;
+
+  /* Gradients */
+  --green-background-gradient-start: #9ee77e;
+  --green-background-gradient-end: #2f7320;
+
+  --orange-background-gradient-start: #ff9400;
+  --orange-background-gradient-end: #f3693c;
+}
+
+.button-wrapper {
+  display: flex;
 }
