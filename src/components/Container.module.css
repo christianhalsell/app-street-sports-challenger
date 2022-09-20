@@ -1,11 +1,10 @@
 .container {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0 auto;
-  padding: 10px;
-  text-align: center;
   width: 960px;
 }
 

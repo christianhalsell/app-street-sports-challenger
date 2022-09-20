@@ -1,0 +1,22 @@
+.header {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 30;
+  padding: 10px;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.headerCenter {
+  flex: 4;
+  text-align: center;
+}
+
+.headerRight {
+  flex: 1;
+  text-align: right;
+}

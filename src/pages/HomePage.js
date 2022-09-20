@@ -2,15 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Container from '../components/Container';
+import Header from '../components/Header';
 
 const HomePage = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      <div style={{ backgroundColor: 'yellow', height: 30 }}>Header</div>
+      <Header title='Homepage' leftContent='left' rightContent='right' />
       <div
         style={{
-          backgroundColor: 'lime',
+          backgroundColor: 'green',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
