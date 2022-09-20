@@ -3,23 +3,15 @@ import { useNavigate } from 'react-router-dom';
 
 import Container from '../components/Container';
 import Header from '../components/Header';
+import Content from '../components/Content';
 
 const HomePage = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      <Header title='Homepage' leftContent='left' rightContent='right' />
-      <div
-        style={{
-          backgroundColor: 'green',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-          height: '100%',
-          textAlign: 'center'
-        }}
-      >
-        <div>Home Page</div>
+      <Header title='Home Page' leftContent='left' rightContent='right' />
+      <Content position='bottom'>
+        <div>Home Page content</div>
         <div>
           <button
             onClick={() => {
@@ -29,7 +21,7 @@ const HomePage = () => {
             click me
           </button>
         </div>
-      </div>
+      </Content>
     </Container>
   );
 };
