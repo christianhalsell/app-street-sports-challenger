@@ -22,7 +22,7 @@ const HomePage = () => {
           </Button>
           <Button
             onClick={() => {
-              alert('it works!');
+              navigate('/inputaddplayers');
             }}
             type='white'
           >

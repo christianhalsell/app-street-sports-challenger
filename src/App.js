@@ -8,6 +8,7 @@ import {
 
 import HomePage from './pages/HomePage';
 import HowToUsePage from './pages/HowToUsePage';
+import InputAddPlayersPage from './pages/InputAddPlayersPage';
 import FinalScoresPage from './pages/FinalScoresPage';
 import NameEntryPage from './pages/NameEntryPage';
 import ScoresPage from './pages/ScoresPage';
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/howtouse' element={<HowToUsePage />} />
+            <Route path='/inputaddplayers' element={<InputAddPlayersPage />} />
             <Route path='/finalscores' element={<FinalScoresPage />} />
             <Route path='/nameentry' element={<NameEntryPage />} />
             <Route path='/scores' element={<ScoresPage />} />
