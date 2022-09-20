@@ -1,20 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Container from '../components/Container';
+
 const HomePage = () => {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        width: '960px',
-        height: '100vh',
-        margin: '0 auto',
-        backgroundColor: 'red',
-        textAlign: 'center',
-        display: 'flex',
-        flexDirection: 'column'
-      }}
-    >
+    <Container>
       <div style={{ backgroundColor: 'yellow', height: 30 }}>Header</div>
       <div
         style={{
@@ -26,8 +18,7 @@ const HomePage = () => {
           textAlign: 'center'
         }}
       >
-        <div>inner</div>
-        {/* <div>Home Page</div>
+        <div>Home Page</div>
         <div>
           <button
             onClick={() => {
@@ -36,9 +27,9 @@ const HomePage = () => {
           >
             click me
           </button>
-        </div> */}
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
