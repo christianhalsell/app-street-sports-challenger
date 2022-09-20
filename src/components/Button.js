@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './Button.module.css';
 import Colors from '../constants/Colors';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const Button = ({ children, onClick, type }) => {
   let buttonType = {

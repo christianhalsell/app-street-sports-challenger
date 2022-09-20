@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { FaLessThan, FaHome } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 import Container from '../components/Container';
 import Header from '../components/Header';
@@ -15,10 +16,16 @@ const InputAddPlayersPage = () => {
         title='Add Players'
         leftContent={
           <Button type='text' onClick={() => navigate(-1)}>
-            &lt; Back
+            <FaLessThan size={20} />{' '}
+            <span style={{ paddingLeft: 6 }}>Back</span>
           </Button>
         }
-        rightContent=''
+        rightContent={
+          ''
+          // <Button type='text' onClick={() => navigate('/')}>
+          //   <FaHome size={26} />
+          // </Button>
+        }
       />
       <Content>
         <div>Hello world!</div>
