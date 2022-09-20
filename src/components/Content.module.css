@@ -1,5 +1,7 @@
 .content {
-  background-color: lime;
+  background-image: url(../assets/homeBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100%;

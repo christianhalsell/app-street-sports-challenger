@@ -5,10 +5,10 @@
   flex-direction: column;
   height: 100vh;
   margin: 0 auto;
-  width: 960px;
+  width: 660px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 660px) {
   .container {
     width: 100%;
   }
