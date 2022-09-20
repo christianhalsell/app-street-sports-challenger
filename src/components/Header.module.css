@@ -1,6 +1,7 @@
 .header {
   align-items: center;
   background-color: white;
+  border-bottom: 1px solid var(--light-gray);
   display: flex;
   flex-direction: row;
   height: 40px;

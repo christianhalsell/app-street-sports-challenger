@@ -17,13 +17,6 @@ const Button = ({ children, onClick, type }) => {
       };
       break;
     }
-    case 'info': {
-      buttonType = {
-        backgroundColor: Colors.ScoreBlue,
-        color: 'white'
-      };
-      break;
-    }
     case 'warning': {
       buttonType = {
         backgroundColor: Colors.WarningOrange,
@@ -38,6 +31,16 @@ const Button = ({ children, onClick, type }) => {
       };
       break;
     }
+    case 'text': {
+      buttonType = {
+        backgroundColor: 'transparent',
+        color: Colors.ScoreBlue,
+        padding: 0,
+        width: 'inherit'
+      };
+      break;
+    }
+    case 'info':
     default: {
       buttonType = {
         backgroundColor: Colors.ScoreBlue,

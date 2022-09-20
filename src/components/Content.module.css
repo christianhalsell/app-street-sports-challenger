@@ -1,7 +1,5 @@
 .content {
-  /* background-image: url(../assets/homeBG.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: var(--extra-light-gray);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -11,6 +9,8 @@
 
 .contentImage {
   background-image: url(../assets/homeBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .flexStart {
