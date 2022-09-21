@@ -23,8 +23,8 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/howtouse' element={<HowToUsePage />} />
             <Route path='/inputaddplayers' element={<InputAddPlayersPage />} />
-            <Route path='/finalscores' element={<FinalScoresPage />} />
             <Route path='/nameentry' element={<NameEntryPage />} />
+            <Route path='/finalscores' element={<FinalScoresPage />} />
             <Route path='/scores' element={<ScoresPage />} />
             <Route path='/rounds' element={<RoundsPage />} />
           </Routes>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 
 import styles from './PlayerInputForm.module.css';
@@ -12,6 +13,8 @@ const PlayerInputForm = () => {
   const [winPointsValue, setWinPointsValue] = useState(3);
   const [lossPointsValue, setLossPointsValue] = useState(2);
   const [tiePointsValue, setTiePointsValue] = useState(1);
+
+  const navigate = useNavigate();
 
   // TESTS
   useEffect(() => {
@@ -36,6 +39,34 @@ const PlayerInputForm = () => {
 
   const tiePointsInputHandler = (e) => {
     setTiePointsValue(e.target.value.replace(/[^0-9]/g, ''));
+  };
+
+  const playersAndTeamsNumberCheck = () => {
+    // If there are more teams than players
+    if (parseInt(numberOfTeamsValue) > parseInt(numberOfPlayersValue)) {
+      alert(
+        'Number of players must be greater than or equal to number of teams.'
+      );
+      return;
+    }
+    // If there are less than 2 players
+    if (parseInt(numberOfPlayersValue) <= 1) {
+      alert('Please select 2 or more players.');
+      return;
+    }
+    // If there are an odd number of teams
+    if (numberOfTeamsValue % 2 !== 0) {
+      alert('Please select an even number of teams.');
+      return;
+    }
+    // If the number of teams is 0
+    if (parseInt(numberOfTeamsValue) === 0) {
+      alert('Please select 2 or more teams.');
+      return;
+    }
+
+    // dispatchPlayersTeams();
+    navigate('/nameentry'); // GO TO NEXT PAGE
   };
 
   return (
@@ -108,7 +139,7 @@ const PlayerInputForm = () => {
         </div>
 
         <div className={styles.inputRowButton}>
-          <Button type='text' onClick={() => alert('next')}>
+          <Button type='text' onClick={playersAndTeamsNumberCheck}>
             Next
           </Button>
         </div>
