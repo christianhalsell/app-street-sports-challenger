@@ -28,7 +28,6 @@ const InputAddPlayersPage = () => {
         }
       />
       <Content>
-        <div>Hello world!</div>
         <PlayerInputForm />
       </Content>
     </Container>
