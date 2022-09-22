@@ -1,15 +1,14 @@
 .button {
+  align-items: center;
   background-color: var(--score-blue);
   border-radius: 20px;
   border-width: 0;
   cursor: pointer;
+  display: flex;
+  font-family: 'Lato-Bold';
   font-size: 1.125rem;
-  font-weight: bold;
+  justify-content: center;
   margin: 10px;
   padding: 20px;
   width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

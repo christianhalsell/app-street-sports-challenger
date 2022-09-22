@@ -3,6 +3,8 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  font-family: 'Lato-Regular';
+  font-size: 1.125rem;
   height: 100vh;
   margin: 0 auto;
   width: 660px;
