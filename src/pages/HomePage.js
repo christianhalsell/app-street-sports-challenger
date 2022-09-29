@@ -24,7 +24,7 @@ const HomePage = () => {
             onClick={() => {
               navigate('/inputaddplayers');
             }}
-            type='white'
+            buttonType='white'
           >
             New Game
           </Button>

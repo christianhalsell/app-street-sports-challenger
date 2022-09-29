@@ -4,7 +4,7 @@ import Button from '../components/Button';
 
 import styles from './PlayerInputForm.module.css';
 
-const PlayerInputForm = () => {
+const PlayerInputForm = ({ setErrorMessage }) => {
   // Selectors
 
   // Local State
@@ -44,24 +44,30 @@ const PlayerInputForm = () => {
   const playersAndTeamsNumberCheck = () => {
     // If there are more teams than players
     if (parseInt(numberOfTeamsValue) > parseInt(numberOfPlayersValue)) {
-      alert(
+      setErrorMessage(
         'Number of players must be greater than or equal to number of teams.'
       );
+      // alert(
+      //   'Number of players must be greater than or equal to number of teams.'
+      // );
       return;
     }
     // If there are less than 2 players
     if (parseInt(numberOfPlayersValue) <= 1) {
-      alert('Please select 2 or more players.');
+      setErrorMessage('Please select 2 or more players.');
+      // alert('Please select 2 or more players.');
       return;
     }
     // If there are an odd number of teams
     if (numberOfTeamsValue % 2 !== 0) {
-      alert('Please select an even number of teams.');
+      setErrorMessage('Please select an even number of teams.');
+      // alert('Please select an even number of teams.');
       return;
     }
     // If the number of teams is 0
     if (parseInt(numberOfTeamsValue) === 0) {
-      alert('Please select 2 or more teams.');
+      setErrorMessage('Please select 2 or more teams.');
+      // alert('Please select 2 or more teams.');
       return;
     }
 
@@ -139,7 +145,7 @@ const PlayerInputForm = () => {
         </div>
 
         <div className={styles.inputRowButton}>
-          <Button type='text' onClick={playersAndTeamsNumberCheck}>
+          <Button buttonType='text' onClick={playersAndTeamsNumberCheck}>
             Next
           </Button>
         </div>

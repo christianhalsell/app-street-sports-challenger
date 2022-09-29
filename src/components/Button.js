@@ -4,36 +4,36 @@ import styles from './Button.module.css';
 import Colors from '../constants/Colors';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const Button = ({ children, onClick, type }) => {
-  let buttonType = {
+const Button = ({ children, onClick, buttonType }) => {
+  let buttonStyle = {
     color: 'white',
     backgroundColor: Colors.ScoreBlue
   };
 
-  switch (type) {
+  switch (buttonType) {
     case 'alert': {
-      buttonType = {
+      buttonStyle = {
         backgroundColor: Colors.AlertRed,
         color: 'white'
       };
       break;
     }
     case 'warning': {
-      buttonType = {
+      buttonStyle = {
         backgroundColor: Colors.WarningOrange,
         color: 'white'
       };
       break;
     }
     case 'white': {
-      buttonType = {
+      buttonStyle = {
         backgroundColor: 'white',
         color: Colors.ScoreBlue
       };
       break;
     }
     case 'text': {
-      buttonType = {
+      buttonStyle = {
         backgroundColor: 'transparent',
         color: Colors.ScoreBlue,
         padding: 0,
@@ -43,7 +43,7 @@ const Button = ({ children, onClick, type }) => {
     }
     case 'info':
     default: {
-      buttonType = {
+      buttonStyle = {
         backgroundColor: Colors.ScoreBlue,
         color: 'white'
       };
@@ -55,7 +55,7 @@ const Button = ({ children, onClick, type }) => {
     <button
       className={styles.button}
       onClick={onClick}
-      style={{ ...buttonType }}
+      style={{ ...buttonStyle }}
     >
       {children}
     </button>
