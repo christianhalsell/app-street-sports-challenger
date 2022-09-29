@@ -4,7 +4,7 @@ import Button from '../components/Button';
 
 import styles from './PlayerInputForm.module.css';
 
-const PlayerInputForm = ({ setErrorMessage }) => {
+const PlayerInputForm = ({ setModalMessage }) => {
   // Selectors
 
   // Local State
@@ -15,11 +15,6 @@ const PlayerInputForm = ({ setErrorMessage }) => {
   const [tiePointsValue, setTiePointsValue] = useState(1);
 
   const navigate = useNavigate();
-
-  // TESTS
-  useEffect(() => {
-    //
-  }, []);
 
   // Input Handlers
   const playersInputHandler = (e) => {
@@ -41,33 +36,29 @@ const PlayerInputForm = ({ setErrorMessage }) => {
     setTiePointsValue(e.target.value.replace(/[^0-9]/g, ''));
   };
 
-  const playersAndTeamsNumberCheck = () => {
+  const playersAndTeamsNumberCheck = (e) => {
+    e.preventDefault();
+
     // If there are more teams than players
     if (parseInt(numberOfTeamsValue) > parseInt(numberOfPlayersValue)) {
-      setErrorMessage(
+      setModalMessage(
         'Number of players must be greater than or equal to number of teams.'
       );
-      // alert(
-      //   'Number of players must be greater than or equal to number of teams.'
-      // );
       return;
     }
     // If there are less than 2 players
     if (parseInt(numberOfPlayersValue) <= 1) {
-      setErrorMessage('Please select 2 or more players.');
-      // alert('Please select 2 or more players.');
+      setModalMessage('Please select 2 or more players.');
       return;
     }
     // If there are an odd number of teams
     if (numberOfTeamsValue % 2 !== 0) {
-      setErrorMessage('Please select an even number of teams.');
-      // alert('Please select an even number of teams.');
+      setModalMessage('Please select an even number of teams.');
       return;
     }
     // If the number of teams is 0
     if (parseInt(numberOfTeamsValue) === 0) {
-      setErrorMessage('Please select 2 or more teams.');
-      // alert('Please select 2 or more teams.');
+      setModalMessage('Please select 2 or more teams.');
       return;
     }
 
@@ -77,7 +68,7 @@ const PlayerInputForm = ({ setErrorMessage }) => {
 
   return (
     <div className={styles.playerInputForm}>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form>
         {/* Number of Players */}
         <div className={styles.inputRow}>
           <div className={styles.inputLabel}>Number of Players:</div>

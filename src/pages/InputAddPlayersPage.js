@@ -7,22 +7,29 @@ import Header from '../components/Header';
 import Content from '../components/Content';
 import Button from '../components/Button';
 import PlayerInputForm from '../components/PlayerInputForm';
+import ErrorModal from '../components/ErrorModal';
 
 const InputAddPlayersPage = () => {
-  const [errorMessage, setErrorMessage] = useState(null);
-
-  useEffect(() => {
-    if (errorMessage !== null) {
-      console.log(
-        '%c%s',
-        'background-color: magenta; padding: 4px; color: black',
-        'errorMessage:',
-        errorMessage
-      );
-    }
-  }, [errorMessage]);
+  const [modalMessage, setModalMessage] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const navigate = useNavigate();
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalMessage(null);
+    setModalIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (modalMessage !== null) {
+      openModal();
+    }
+  }, [modalMessage]);
+
   return (
     <Container>
       <Header
@@ -41,7 +48,13 @@ const InputAddPlayersPage = () => {
         }
       />
       <Content>
-        <PlayerInputForm setErrorMessage={setErrorMessage} />
+        <PlayerInputForm setModalMessage={setModalMessage} />
+        <ErrorModal
+          modalIsOpen={modalIsOpen}
+          closeModal={closeModal}
+          modalMessage={modalMessage}
+          modalTitle='Error'
+        />
       </Content>
     </Container>
   );
