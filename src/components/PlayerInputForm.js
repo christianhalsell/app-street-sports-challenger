@@ -10,21 +10,24 @@ const PlayerInputForm = ({ setModalMessage }) => {
   const { round, playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
     useSelector((state) => state.scores);
 
-  console.log(
-    '%c%s',
-    'background-color: yellow; padding: 4px; color: black',
-    'playersCount:',
-    playersCount
-  );
+  useEffect(() => {
+    console.log(
+      '%c%s',
+      'background-color: cyan; padding: 4px; color: black',
+      'playersCount:',
+      playersCount
+    );
+  }, []);
 
   // Selectors
 
   // Local State
-  const [numberOfPlayersValue, setNumberOfPlayersValue] = useState(8);
-  const [numberOfTeamsValue, setNumberOfTeamsValue] = useState(2);
-  const [winPointsValue, setWinPointsValue] = useState(3);
-  const [lossPointsValue, setLossPointsValue] = useState(2);
-  const [tiePointsValue, setTiePointsValue] = useState(1);
+  const [numberOfPlayersValue, setNumberOfPlayersValue] =
+    useState(playersCount);
+  const [numberOfTeamsValue, setNumberOfTeamsValue] = useState(teamsCount);
+  const [winPointsValue, setWinPointsValue] = useState(pointsWin);
+  const [lossPointsValue, setLossPointsValue] = useState(pointsLoss);
+  const [tiePointsValue, setTiePointsValue] = useState(pointsTie);
 
   const navigate = useNavigate();
 
