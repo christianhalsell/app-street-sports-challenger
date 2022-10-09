@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './PlayerInputForm.module.css';
 
 const PlayerInputForm = ({ setModalMessage }) => {
+  const dispatch = useDispatch();
+  const { round, playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
+    useSelector((state) => state.scores);
+
+  console.log(
+    '%c%s',
+    'background-color: yellow; padding: 4px; color: black',
+    'playersCount:',
+    playersCount
+  );
+
   // Selectors
 
   // Local State
