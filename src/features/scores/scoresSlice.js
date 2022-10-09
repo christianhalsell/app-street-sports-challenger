@@ -33,10 +33,14 @@ export const scoresSlice = createSlice({
       state.pointsWin = DEFAULT_WIN_POINTS;
       state.pointsLoss = DEFAULT_LOSE_POINTS;
       state.pointsTie = DEFAULT_TIE_POINTS;
+    },
+    addPlayers: (state, action) => {
+      console.log('Action payload:', action.payload);
+      state.playersCount = action.payload;
     }
   },
   extraReducers: (builder) => {} // async reducers
 });
 
-export const { reset } = scoresSlice.actions;
+export const { reset, addPlayers } = scoresSlice.actions;
 export default scoresSlice.reducer;

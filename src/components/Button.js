@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 import Colors from '../constants/Colors';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const Button = ({ children, onClick, buttonType }) => {
+const Button = ({ children, onClick, buttonType, type }) => {
   let buttonStyle = {
     color: 'white',
     backgroundColor: Colors.ScoreBlue
@@ -56,6 +56,7 @@ const Button = ({ children, onClick, buttonType }) => {
       className={styles.button}
       onClick={onClick}
       style={{ ...buttonStyle }}
+      type={type}
     >
       {children}
     </button>

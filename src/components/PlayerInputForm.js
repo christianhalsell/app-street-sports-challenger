@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useSelector, useDispatch } from 'react-redux';
+import { reset, addPlayers } from '../features/scores/scoresSlice';
 
 import styles from './PlayerInputForm.module.css';
 
@@ -10,20 +11,11 @@ const PlayerInputForm = ({ setModalMessage }) => {
   const { round, playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
     useSelector((state) => state.scores);
 
-  useEffect(() => {
-    console.log(
-      '%c%s',
-      'background-color: cyan; padding: 4px; color: black',
-      'playersCount:',
-      playersCount
-    );
-  }, []);
-
   // Selectors
 
   // Local State
-  const [numberOfPlayersValue, setNumberOfPlayersValue] =
-    useState(playersCount);
+  // const [playersCount, setNumberOfPlayersValue] =
+  //   useState(playersCount);
   const [numberOfTeamsValue, setNumberOfTeamsValue] = useState(teamsCount);
   const [winPointsValue, setWinPointsValue] = useState(pointsWin);
   const [lossPointsValue, setLossPointsValue] = useState(pointsLoss);
@@ -33,7 +25,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
 
   // Input Handlers
   const playersInputHandler = (e) => {
-    setNumberOfPlayersValue(e.target.value.replace(/[^0-9]/g, ''));
+    dispatch(addPlayers(e.target.value.replace(/[^0-9]/g, '')));
   };
   const teamsInputHandler = (e) => {
     setNumberOfTeamsValue(e.target.value.replace(/[^0-9]/g, ''));
@@ -51,18 +43,23 @@ const PlayerInputForm = ({ setModalMessage }) => {
     setTiePointsValue(e.target.value.replace(/[^0-9]/g, ''));
   };
 
+  const resetForm = (e) => {
+    e.preventDefault();
+    dispatch(reset());
+  };
+
   const playersAndTeamsNumberCheck = (e) => {
     e.preventDefault();
 
     // If there are more teams than players
-    if (parseInt(numberOfTeamsValue) > parseInt(numberOfPlayersValue)) {
+    if (parseInt(numberOfTeamsValue) > parseInt(playersCount)) {
       setModalMessage(
         'Number of players must be greater than or equal to number of teams.'
       );
       return;
     }
     // If there are less than 2 players
-    if (parseInt(numberOfPlayersValue) <= 1) {
+    if (parseInt(playersCount) <= 1) {
       setModalMessage('Please select 2 or more players.');
       return;
     }
@@ -83,7 +80,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
 
   return (
     <div className={styles.playerInputForm}>
-      <form>
+      <form onSubmit={playersAndTeamsNumberCheck}>
         {/* Number of Players */}
         <div className={styles.inputRow}>
           <div className={styles.inputLabel}>Number of Players:</div>
@@ -92,7 +89,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
               className={styles.inputBox}
               maxLength={2}
               onChange={playersInputHandler}
-              value={numberOfPlayersValue}
+              value={playersCount}
             />
           </div>
         </div>
@@ -151,8 +148,14 @@ const PlayerInputForm = ({ setModalMessage }) => {
         </div>
 
         <div className={styles.inputRowButton}>
-          <Button buttonType='text' onClick={playersAndTeamsNumberCheck}>
+          <Button buttonType='text' type='submit'>
             Next
+          </Button>
+        </div>
+
+        <div className={styles.inputRowButton}>
+          <Button buttonType='warning' onClick={resetForm}>
+            Reset
           </Button>
         </div>
       </form>
