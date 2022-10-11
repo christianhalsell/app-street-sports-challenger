@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { reset, addPlayers } from '../features/scores/scoresSlice';
+import {
+  reset,
+  addPlayers,
+  addTeams,
+  addWinPoints,
+  addLossPoints,
+  addTiePoints
+} from '../features/scores/scoresSlice';
 
 import styles from './PlayerInputForm.module.css';
 
@@ -11,16 +18,6 @@ const PlayerInputForm = ({ setModalMessage }) => {
   const { round, playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
     useSelector((state) => state.scores);
 
-  // Selectors
-
-  // Local State
-  // const [playersCount, setNumberOfPlayersValue] =
-  //   useState(playersCount);
-  const [numberOfTeamsValue, setNumberOfTeamsValue] = useState(teamsCount);
-  const [winPointsValue, setWinPointsValue] = useState(pointsWin);
-  const [lossPointsValue, setLossPointsValue] = useState(pointsLoss);
-  const [tiePointsValue, setTiePointsValue] = useState(pointsTie);
-
   const navigate = useNavigate();
 
   // Input Handlers
@@ -28,19 +25,19 @@ const PlayerInputForm = ({ setModalMessage }) => {
     dispatch(addPlayers(e.target.value.replace(/[^0-9]/g, '')));
   };
   const teamsInputHandler = (e) => {
-    setNumberOfTeamsValue(e.target.value.replace(/[^0-9]/g, ''));
+    dispatch(addTeams(e.target.value.replace(/[^0-9]/g, '')));
   };
 
   const winPointsInputHandler = (e) => {
-    setWinPointsValue(e.target.value.replace(/[^0-9]/g, ''));
+    dispatch(addWinPoints(e.target.value.replace(/[^0-9]/g, '')));
   };
 
   const lossPointsInputHandler = (e) => {
-    setLossPointsValue(e.target.value.replace(/[^0-9]/g, ''));
+    dispatch(addLossPoints(e.target.value.replace(/[^0-9]/g, '')));
   };
 
   const tiePointsInputHandler = (e) => {
-    setTiePointsValue(e.target.value.replace(/[^0-9]/g, ''));
+    dispatch(addTiePoints(e.target.value.replace(/[^0-9]/g, '')));
   };
 
   const resetForm = (e) => {
@@ -52,7 +49,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
     e.preventDefault();
 
     // If there are more teams than players
-    if (parseInt(numberOfTeamsValue) > parseInt(playersCount)) {
+    if (parseInt(teamsCount) > parseInt(playersCount)) {
       setModalMessage(
         'Number of players must be greater than or equal to number of teams.'
       );
@@ -64,12 +61,12 @@ const PlayerInputForm = ({ setModalMessage }) => {
       return;
     }
     // If there are an odd number of teams
-    if (numberOfTeamsValue % 2 !== 0) {
+    if (teamsCount % 2 !== 0) {
       setModalMessage('Please select an even number of teams.');
       return;
     }
     // If the number of teams is 0
-    if (parseInt(numberOfTeamsValue) === 0) {
+    if (parseInt(teamsCount) === 0) {
       setModalMessage('Please select 2 or more teams.');
       return;
     }
@@ -101,7 +98,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
               className={styles.inputBox}
               maxLength={2}
               onChange={teamsInputHandler}
-              value={numberOfTeamsValue}
+              value={teamsCount}
             />
           </div>
         </div>
@@ -116,7 +113,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
               className={styles.inputBox}
               maxLength={2}
               onChange={winPointsInputHandler}
-              value={winPointsValue}
+              value={pointsWin}
             />
           </div>
         </div>
@@ -129,7 +126,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
               className={styles.inputBox}
               maxLength={2}
               onChange={lossPointsInputHandler}
-              value={lossPointsValue}
+              value={pointsLoss}
             />
           </div>
         </div>
@@ -142,7 +139,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
               className={styles.inputBox}
               maxLength={2}
               onChange={tiePointsInputHandler}
-              value={tiePointsValue}
+              value={pointsTie}
             />
           </div>
         </div>
