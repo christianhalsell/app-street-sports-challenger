@@ -23,11 +23,20 @@ const NameEntryPage = () => {
     Array.from({ length: playersCount })
   );
 
+  useEffect(() => {
+    console.log(
+      '%c%s',
+      'background-color: yellow; padding: 4px; color: black',
+      'playerNames:',
+      playerNames
+    );
+  }, [playerNames]);
+
   // Add names to playerNames state
-  const nameInputHandler = (index, name) => {
+  const nameInputHandler = (e, index) => {
     setPlayerNames((prev) => {
       const tempArray = [...prev];
-      tempArray[index] = name;
+      tempArray[index] = e.target.value;
       return tempArray;
     });
   };
@@ -68,7 +77,7 @@ const NameEntryPage = () => {
                 <input
                   className={styles.scoreInput}
                   maxLength={50}
-                  onChangeText={(e) => nameInputHandler(idx, e)}
+                  onChange={(e) => nameInputHandler(e, idx)}
                 />
               </div>
             </div>
