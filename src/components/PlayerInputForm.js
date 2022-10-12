@@ -15,7 +15,9 @@ import styles from './PlayerInputForm.module.css';
 
 const PlayerInputForm = ({ setModalMessage }) => {
   const dispatch = useDispatch();
-  const { round, playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
+
+  // Selectors
+  const { playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
     useSelector((state) => state.scores);
 
   const navigate = useNavigate();

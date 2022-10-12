@@ -2,16 +2,18 @@ import React from 'react';
 import Modal from 'react-modal';
 import Button from '../components/Button';
 
+import Colors from '../constants/Colors';
 import styles from './ErrorModal.module.css';
 
 const customStyles = {
   content: {
-    borderColor: '#ddd',
+    borderColor: Colors.LightGray,
+    borderRadius: '20px',
     bottom: 'auto',
+    boxSizing: 'border-box',
     left: '50%',
     marginRight: '-50%',
-    padding: 0,
-    boxSizing: 'border-box',
+    padding: '10px 0',
     right: 'auto',
     textAlign: 'center',
     top: '50%',

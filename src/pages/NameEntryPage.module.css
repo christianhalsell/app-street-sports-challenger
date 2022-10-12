@@ -1,0 +1,26 @@
+.nameEntryArea_Wrapper {
+  align-items: center;
+  display: flex;
+  padding-bottom: var(--padding);
+}
+
+.nameEntryArea_Name {
+  flex: 1;
+  text-align: left;
+}
+
+.nameEntryArea_Input {
+  flex: 3;
+  text-align: right;
+}
+
+.scoreInput {
+  background-color: white;
+  border-color: var(--light-gray);
+  border-style: solid;
+  border-width: 1;
+  color: 'black';
+  font-size: 1.625rem;
+  height: 3.125rem;
+  width: 95%;
+}
