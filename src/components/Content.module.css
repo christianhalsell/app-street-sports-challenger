@@ -6,6 +6,7 @@
   overflow-y: scroll;
   padding: 30px 30px;
   text-align: center;
+  flex: 10;
 }
 
 .contentImage {
@@ -24,4 +25,5 @@
 
 .flexEnd {
   justify-content: flex-end;
+  flex: 1;
 }

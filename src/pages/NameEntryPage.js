@@ -58,15 +58,6 @@ const NameEntryPage = () => {
         }
       />
       <Content>
-        <div style={{ backgroundColor: 'orange', margin: 30 }}>
-          <div>Round: {round}</div>
-          <div>Number of Players: {playersCount}</div>
-          <div>Number of Teams: {teamsCount}</div>
-          <div>Win Points: {pointsWin}</div>
-          <div>Lose Points: {pointsLoss}</div>
-          <div>Tie Points: {pointsTie}</div>
-        </div>
-
         {playerNames.map((item, idx) => {
           return (
             <div className={styles.nameEntryArea_Wrapper} key={idx}>
@@ -83,6 +74,19 @@ const NameEntryPage = () => {
             </div>
           );
         })}
+      </Content>
+
+      <div style={{ backgroundColor: 'yellow', height: 10 }} />
+      <Content position='bottom'>
+        <div className='button-wrapper'>
+          <Button
+            onClick={() => {
+              navigate('/rounds');
+            }}
+          >
+            Begin Game
+          </Button>
+        </div>
       </Content>
     </Container>
   );

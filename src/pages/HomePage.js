@@ -2,9 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Container from '../components/Container';
-import Header from '../components/Header';
 import Content from '../components/Content';
 import Button from '../components/Button';
+
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -12,7 +13,8 @@ const HomePage = () => {
     <Container>
       {/* <Header title='Home' leftContent='' rightContent='' /> */}
       <Content position='bottom' type='image'>
-        <div className='button-wrapper'>
+        <div className={styles.buttonWrapper}>
+          {/* <div className='button-wrapper'> */}
           <Button
             onClick={() => {
               navigate('/howtouse');

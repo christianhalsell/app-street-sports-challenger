@@ -55,7 +55,3 @@ code {
   --modal-top-margin: 3.125rem;
   --padding: 0.625rem;
 }
-
-.button-wrapper {
-  display: flex;
-}
