@@ -23,6 +23,7 @@
   font-size: 1.625rem;
   height: 3.125rem;
   width: 95%;
+  padding: 0 var(--padding);
 }
 
 .buttonWrapper {
