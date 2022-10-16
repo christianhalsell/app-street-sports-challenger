@@ -23,14 +23,14 @@ const NameEntryPage = () => {
     Array.from({ length: playersCount })
   );
 
-  useEffect(() => {
-    console.log(
-      '%c%s',
-      'background-color: yellow; padding: 4px; color: black',
-      'playerNames:',
-      playerNames
-    );
-  }, [playerNames]);
+  // useEffect(() => {
+  //   console.log(
+  //     '%c%s',
+  //     'background-color: yellow; padding: 4px; color: black',
+  //     'playerNames:',
+  //     playerNames
+  //   );
+  // }, [playerNames]);
 
   // Add names to playerNames state
   const nameInputHandler = (e, index) => {

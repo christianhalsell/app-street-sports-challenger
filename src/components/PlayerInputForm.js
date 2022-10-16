@@ -8,7 +8,8 @@ import {
   addTeams,
   addWinPoints,
   addLossPoints,
-  addTiePoints
+  addTiePoints,
+  setTeams
 } from '../features/scores/scoresSlice';
 
 import styles from './PlayerInputForm.module.css';
@@ -73,7 +74,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
       return;
     }
 
-    // dispatchPlayersTeams();
+    dispatch(setTeams());
     navigate('/nameentry'); // GO TO NEXT PAGE
   };
 
