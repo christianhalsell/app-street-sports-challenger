@@ -112,6 +112,20 @@ export const scoresSlice = createSlice({
       state.roundSubmitDisabled = true;
       state.scoresRount = scoresRound;
       state.teamsRound = teamsRound;
+    },
+    addNames: (state, action) => {
+      const tempFinalObjForNames = [];
+      const tempNamesArrayForNames = action.payload;
+
+      // Creates the PlayersScores object
+      for (let i = 0; i < tempNamesArrayForNames.length; i++) {
+        tempFinalObjForNames.push({
+          id: i + 1,
+          name: tempNamesArrayForNames[i]
+        });
+      }
+
+      state.playersScores = tempFinalObjForNames;
     }
   },
   extraReducers: (builder) => {} // async reducers
@@ -124,6 +138,7 @@ export const {
   addWinPoints,
   addLossPoints,
   addTiePoints,
-  setTeams
+  setTeams,
+  addNames
 } = scoresSlice.actions;
 export default scoresSlice.reducer;

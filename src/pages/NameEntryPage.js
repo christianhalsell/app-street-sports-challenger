@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { addNames } from '../features/scores/scoresSlice';
 
 import Container from '../components/Container';
 import Header from '../components/Header';
@@ -23,14 +24,14 @@ const NameEntryPage = () => {
     Array.from({ length: playersCount })
   );
 
-  // useEffect(() => {
-  //   console.log(
-  //     '%c%s',
-  //     'background-color: yellow; padding: 4px; color: black',
-  //     'playerNames:',
-  //     playerNames
-  //   );
-  // }, [playerNames]);
+  useEffect(() => {
+    console.log(
+      '%c%s',
+      'background-color: yellow; padding: 4px; color: black',
+      'playerNames:',
+      playerNames
+    );
+  }, [playerNames]);
 
   // Add names to playerNames state
   const nameInputHandler = (e, index) => {
@@ -80,6 +81,7 @@ const NameEntryPage = () => {
         <div className={styles.buttonWrapper}>
           <Button
             onClick={() => {
+              dispatch(addNames(playerNames));
               navigate('/rounds');
             }}
           >
