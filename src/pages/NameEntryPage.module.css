@@ -24,3 +24,8 @@
   height: 3.125rem;
   width: 95%;
 }
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}

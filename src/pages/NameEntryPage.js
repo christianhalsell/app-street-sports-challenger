@@ -76,9 +76,8 @@ const NameEntryPage = () => {
         })}
       </Content>
 
-      <div style={{ backgroundColor: 'yellow', height: 10 }} />
       <Content position='bottom'>
-        <div className='button-wrapper'>
+        <div className={styles.buttonWrapper}>
           <Button
             onClick={() => {
               navigate('/rounds');
