@@ -16,22 +16,12 @@ const NameEntryPage = () => {
   const dispatch = useDispatch();
 
   // Selectors
-  const { round, playersCount, teamsCount, pointsWin, pointsLoss, pointsTie } =
-    useSelector((state) => state.scores);
+  const { playersCount } = useSelector((state) => state.scores);
 
   // State
   const [playerNames, setPlayerNames] = useState(
     Array.from({ length: playersCount })
   );
-
-  useEffect(() => {
-    console.log(
-      '%c%s',
-      'background-color: yellow; padding: 4px; color: black',
-      'playerNames:',
-      playerNames
-    );
-  }, [playerNames]);
 
   // Add names to playerNames state
   const nameInputHandler = (e, index) => {
