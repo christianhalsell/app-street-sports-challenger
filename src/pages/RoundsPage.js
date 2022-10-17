@@ -15,7 +15,7 @@ const RoundsPage = () => {
   const dispatch = useDispatch();
 
   // Selectors
-  const { round } = useSelector((state) => state.scores);
+  const { round, teamsRound } = useSelector((state) => state.scores);
 
   // State
 
@@ -37,6 +37,9 @@ const RoundsPage = () => {
       />
       <Content>
         <div>Content here</div>
+        {teamsRound.map((item, index) => {
+          // return <RoundCard key={index} teamMembers={item} field={index + 1} />;
+        })}
       </Content>
 
       <Content position='bottom'>
