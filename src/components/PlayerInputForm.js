@@ -65,7 +65,12 @@ const PlayerInputForm = ({ setModalMessage }) => {
 
   const resetForm = (e) => {
     e.preventDefault();
-    dispatch(reset());
+
+    setNumberOfPlayersValue(playersCount.toString());
+    setNumberOfTeamsValue(teamsCount.toString());
+    setWinPointsValue(pointsWin.toString());
+    setLossPointsValue(pointsLoss.toString());
+    setTiePointsValue(pointsTie.toString());
   };
 
   const playersAndTeamsNumberCheck = (e) => {
