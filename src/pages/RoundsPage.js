@@ -38,7 +38,6 @@ const RoundsPage = () => {
       />
       <Content background='green'>
         <div className={styles.contentWrapper}>
-          <div>Content here</div>
           {teamsRound.map((item, index) => {
             return (
               <RoundCard key={index} teamMembers={item} field={index + 1} />
@@ -48,7 +47,8 @@ const RoundsPage = () => {
 
         <div className={styles.buttonWrapper}>
           <Button
-            buttonType='text'
+            buttonType='white'
+            disabled={true}
             onClick={() => {
               navigate('/scores');
             }}
