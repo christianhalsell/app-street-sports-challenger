@@ -3,6 +3,7 @@ import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import RoundCard from '../components/RoundCard';
 import Container from '../components/Container';
 import Header from '../components/Header';
 import Content from '../components/Content';
@@ -38,7 +39,7 @@ const RoundsPage = () => {
       <Content>
         <div>Content here</div>
         {teamsRound.map((item, index) => {
-          // return <RoundCard key={index} teamMembers={item} field={index + 1} />;
+          return <RoundCard key={index} teamMembers={item} field={index + 1} />;
         })}
       </Content>
 

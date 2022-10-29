@@ -126,6 +126,9 @@ export const scoresSlice = createSlice({
       }
 
       state.playersScores = tempFinalObjForNames;
+    },
+    addScore: (state, action) => {
+      console.log(action.payload);
     }
   },
   extraReducers: (builder) => {} // async reducers
@@ -139,6 +142,7 @@ export const {
   addLossPoints,
   addTiePoints,
   setTeams,
-  addNames
+  addNames,
+  addScore
 } = scoresSlice.actions;
 export default scoresSlice.reducer;
