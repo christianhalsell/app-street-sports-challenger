@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-family: 'Lato-Regular';
+  font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.125rem;
   height: 100vh;
   margin: 0 auto;

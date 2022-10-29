@@ -20,7 +20,7 @@
 }
 .playersText {
   color: white;
-  font-family: 'open-sans';
+  font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 24px;
 }
 .scoreWrapper {

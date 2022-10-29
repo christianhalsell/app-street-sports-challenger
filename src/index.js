@@ -5,8 +5,8 @@ import { store } from './app/store';
 import App from './App';
 import './index.css';
 
-import './fonts/Lato/Lato-Regular.ttf';
-import './fonts/Lato/Lato-Bold.ttf';
+import './assets/fonts/OpenSans-Regular.ttf';
+import './assets/fonts/OpenSans-Bold.ttf';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

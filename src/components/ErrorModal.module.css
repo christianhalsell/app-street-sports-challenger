@@ -1,6 +1,6 @@
 .title {
   color: var(--extra-dark-gray);
-  font-family: 'Lato-Bold';
+  font-family: 'OpenSans-Bold', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0.625rem;
   padding-top: 10px;
