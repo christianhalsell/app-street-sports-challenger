@@ -1,12 +1,24 @@
 .content {
-  background-color: var(--extra-light-gray);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   overflow-y: scroll;
   padding: 30px 30px;
   text-align: center;
   flex: 10;
+}
+
+.backgroundGray {
+  background-color: var(--extra-light-gray);
+}
+
+.backgroundGreen {
+  background-color: none;
+  background-image: linear-gradient(
+    var(--green-background-gradient-start),
+    var(--green-background-gradient-end)
+  );
 }
 
 .contentImage {

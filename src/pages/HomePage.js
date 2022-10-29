@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <Container>
       {/* <Header title='Home' leftContent='' rightContent='' /> */}
-      <Content position='bottom' type='image'>
+      <Content position='bottom' background='image'>
         <div className={styles.buttonWrapper}>
           {/* <div className='button-wrapper'> */}
           <Button

@@ -36,14 +36,16 @@ const RoundsPage = () => {
           </Button>
         }
       />
-      <Content>
-        <div>Content here</div>
-        {teamsRound.map((item, index) => {
-          return <RoundCard key={index} teamMembers={item} field={index + 1} />;
-        })}
-      </Content>
+      <Content background='green'>
+        <div className={styles.contentWrapper}>
+          <div>Content here</div>
+          {teamsRound.map((item, index) => {
+            return (
+              <RoundCard key={index} teamMembers={item} field={index + 1} />
+            );
+          })}
+        </div>
 
-      <Content position='bottom'>
         <div className={styles.buttonWrapper}>
           <Button
             buttonType='text'
@@ -55,6 +57,19 @@ const RoundsPage = () => {
           </Button>
         </div>
       </Content>
+
+      {/* <Content position='bottom'>
+        <div className={styles.buttonWrapper}>
+          <Button
+            buttonType='text'
+            onClick={() => {
+              navigate('/scores');
+            }}
+          >
+            Submit
+          </Button>
+        </div>
+      </Content> */}
     </Container>
   );
 };

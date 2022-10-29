@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './Content.module.css';
 
-const Content = ({ children, position, type }) => {
+const Content = ({ children, position, background }) => {
   let flexPosition;
-  const displayImage = type === 'image' ? styles.contentImage : null;
+  let backgroundType = background === 'image' ? styles.contentImage : null;
 
   switch (position) {
     case 'bottom':
@@ -20,8 +20,22 @@ const Content = ({ children, position, type }) => {
       break;
   }
 
+  switch (background) {
+    case 'image':
+      backgroundType = styles.contentImage;
+      break;
+
+    case 'green':
+      backgroundType = styles.backgroundGreen;
+      break;
+
+    default:
+      backgroundType = styles.backgroundGray;
+      break;
+  }
+
   return (
-    <div className={`${styles.content} ${displayImage} ${flexPosition}`}>
+    <div className={`${styles.content} ${backgroundType} ${flexPosition}`}>
       {children}
     </div>
   );
