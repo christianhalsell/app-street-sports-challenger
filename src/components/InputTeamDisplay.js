@@ -29,8 +29,8 @@ const InputTeamDisplay = (props) => {
   }, [enteredValue]);
 
   // make sure values entered are numbers
-  const numberInputHandler = (inputText) => {
-    setEnteredValue(inputText.replace(/[^0-9]/g, ''));
+  const numberInputHandler = (e) => {
+    setEnteredValue(e.target.value.replace(/[^0-9]/g, ''));
   };
 
   useEffect(() => {
