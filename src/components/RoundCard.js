@@ -5,12 +5,6 @@ import InputTeamDisplay from './InputTeamDisplay';
 import styles from './RoundCard.module.css';
 
 const RoundCard = (props) => {
-  console.log(
-    '%c%s',
-    'background-color: magenta; padding: 4px; color: black',
-    'props:',
-    props
-  );
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.fieldTextWrapper}>

@@ -16,7 +16,9 @@ const RoundsPage = () => {
   const dispatch = useDispatch();
 
   // Selectors
-  const { round, teamsRound } = useSelector((state) => state.scores);
+  const { round, teamsRound, roundSubmitDisabled } = useSelector(
+    (state) => state.scores
+  );
 
   // State
 
@@ -48,7 +50,7 @@ const RoundsPage = () => {
         <div className={styles.buttonWrapper}>
           <Button
             buttonType='white'
-            disabled={true}
+            disabled={roundSubmitDisabled}
             onClick={() => {
               navigate('/scores');
             }}

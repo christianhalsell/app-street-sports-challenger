@@ -8,7 +8,7 @@ import Colors from '../constants/Colors';
 
 const InputTeamDisplay = (props) => {
   // State
-  const [enteredValue, setEnteredValue] = useState();
+  const [enteredValue, setEnteredValue] = useState('');
   const [teamNames, setTeamNames] = useState([]);
 
   // Selectors
@@ -25,7 +25,13 @@ const InputTeamDisplay = (props) => {
 
   // update global state and check if button should be disabled
   useEffect(() => {
-    dispatch(addScore(props.fieldIndex, props.teamIndex, enteredValue));
+    dispatch(
+      addScore({
+        fieldIndex: props.fieldIndex,
+        teamIndex: props.teamIndex,
+        scoreValue: parseInt(enteredValue)
+      })
+    );
   }, [enteredValue]);
 
   // make sure values entered are numbers

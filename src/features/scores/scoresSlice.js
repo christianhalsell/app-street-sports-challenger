@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const DEFAULT_ROUNDS = 1;
-const DEFAULT_PLAYERS_COUNT = 4;
-const DEFAULT_TEAMS_COUNT = 2;
+const DEFAULT_PLAYERS_COUNT = 8;
+const DEFAULT_TEAMS_COUNT = 4;
 const DEFAULT_WIN_POINTS = 3;
 const DEFAULT_LOSE_POINTS = 1;
 const DEFAULT_TIE_POINTS = 2;
@@ -74,7 +74,23 @@ const createRoundScores = (teamsCount) => {
   for (let i = 0; i < teamsCount / 2; i++) {
     tempRoundScores.push([null, null]);
   }
+
   return tempRoundScores;
+};
+
+// Check for empty scores
+const enableSubmitScoresCheck = (scoresRound) => {
+  const tempArray = JSON.parse(JSON.stringify(scoresRound));
+
+  for (let i = 0; i < tempArray.length; i++) {
+    for (let j = 0; j < tempArray[i].length; j++) {
+      if (tempArray[i][j] === undefined || tempArray[i][j] === null) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 };
 
 export const scoresSlice = createSlice({
@@ -110,7 +126,7 @@ export const scoresSlice = createSlice({
 
       state.clearInputs = false;
       state.roundSubmitDisabled = true;
-      state.scoresRount = scoresRound;
+      state.scoresRound = scoresRound;
       state.teamsRound = teamsRound;
     },
     addNames: (state, action) => {
@@ -128,7 +144,17 @@ export const scoresSlice = createSlice({
       state.playersScores = tempFinalObjForNames;
     },
     addScore: (state, action) => {
-      console.log(action.payload);
+      let tempArray = state.scoresRound;
+      let tempRoundSubmitDisabled = state.roundSubmitDisabled;
+
+      tempArray[action.payload.fieldIndex][action.payload.teamIndex] =
+        action.payload.scoreValue;
+
+      // Check if all score slots are filled to enable submit
+      tempRoundSubmitDisabled = enableSubmitScoresCheck(tempArray);
+
+      state.scoresRound = tempArray;
+      state.roundSubmitDisabled = tempRoundSubmitDisabled;
     }
   },
   extraReducers: (builder) => {} // async reducers

@@ -5,7 +5,6 @@ import Colors from '../constants/Colors';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const Button = ({ children, onClick, buttonType, type, disabled }) => {
-  console.log('BUTTONTYPE:', buttonType);
   let buttonStyle;
   let disabledStyle = disabled ? styles.disabled : null;
 
@@ -19,7 +18,6 @@ const Button = ({ children, onClick, buttonType, type, disabled }) => {
       break;
 
     case 'white':
-      console.log('FOUND YA');
       buttonStyle = styles.white;
       break;
 
