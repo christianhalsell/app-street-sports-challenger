@@ -80,7 +80,7 @@ const createRoundScores = (teamsCount) => {
 
 // Check for empty scores
 const enableSubmitScoresCheck = (scoresRound) => {
-  const tempArray = JSON.parse(JSON.stringify(scoresRound));
+  const tempArray = JSON.parse(JSON.stringify(scoresRound)); // TODO: find other way to do this
 
   for (let i = 0; i < tempArray.length; i++) {
     for (let j = 0; j < tempArray[i].length; j++) {
@@ -144,7 +144,7 @@ export const scoresSlice = createSlice({
       state.playersScores = tempFinalObjForNames;
     },
     addScore: (state, action) => {
-      let tempArray = state.scoresRound;
+      const tempArray = state.scoresRound;
       let tempRoundSubmitDisabled = state.roundSubmitDisabled;
 
       tempArray[action.payload.fieldIndex][action.payload.teamIndex] =
