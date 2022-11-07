@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { addRoundScores } from '../features/scores/scoresSlice';
 
 import RoundCard from '../components/RoundCard';
 import Container from '../components/Container';
@@ -19,8 +20,6 @@ const RoundsPage = () => {
   const { round, teamsRound, roundSubmitDisabled } = useSelector(
     (state) => state.scores
   );
-
-  // State
 
   return (
     <Container>
@@ -52,6 +51,7 @@ const RoundsPage = () => {
             buttonType='white'
             disabled={roundSubmitDisabled}
             onClick={() => {
+              dispatch(addRoundScores());
               navigate('/scores');
             }}
           >
@@ -59,19 +59,6 @@ const RoundsPage = () => {
           </Button>
         </div>
       </Content>
-
-      {/* <Content position='bottom'>
-        <div className={styles.buttonWrapper}>
-          <Button
-            buttonType='text'
-            onClick={() => {
-              navigate('/scores');
-            }}
-          >
-            Submit
-          </Button>
-        </div>
-      </Content> */}
     </Container>
   );
 };
