@@ -18,11 +18,8 @@ const ScoresPage = (props) => {
   // Selectors
   const { round, playersScores } = useSelector((state) => state.scores);
 
-  console.log(
-    '%c%s',
-    'background-color: yellow; padding: 4px; color: black',
-    'playersScores:',
-    playersScores
+  const sortedPlayersScores = [...playersScores].sort(
+    (a, b) => b.score - a.score
   );
 
   return (
@@ -42,8 +39,23 @@ const ScoresPage = (props) => {
           </Button>
         }
       />
-      <Content background='green'>
-        <div>Yo</div>
+      <Content background='full'>
+        <div className={styles.flatList}>
+          {sortedPlayersScores.map((item, idx) => (
+            <div className={styles.playerScoreArea} key={idx}>
+              <div className={styles.playerScoreArea_Section}>
+                <div className={styles.playerScoreArea_NameText}>
+                  {!item.name && `#${item.id}`} {item.name || ''}
+                </div>
+              </div>
+              <div className={styles.playerScoreArea_Section}>
+                <div className={styles.playerScoreArea_ScoreText}>
+                  {item.score}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </Content>
     </Container>
   );

@@ -257,7 +257,7 @@ export const scoresSlice = createSlice({
       state.clearInputs = true;
       state.highestScore = highestValue;
       state.playersScores = tempFinalObj;
-      state.round = gameRound + 1;
+      // state.round = gameRound;
     }
   },
   extraReducers: (builder) => {} // async reducers

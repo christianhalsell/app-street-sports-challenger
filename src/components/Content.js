@@ -29,6 +29,10 @@ const Content = ({ children, position, background }) => {
       backgroundType = styles.backgroundGreen;
       break;
 
+    case 'full':
+      backgroundType = styles.full;
+      break;
+
     default:
       backgroundType = styles.backgroundGray;
       break;

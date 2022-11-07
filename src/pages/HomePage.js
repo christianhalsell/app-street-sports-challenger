@@ -11,10 +11,8 @@ const HomePage = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      {/* <Header title='Home' leftContent='' rightContent='' /> */}
       <Content position='bottom' background='image'>
         <div className={styles.buttonWrapper}>
-          {/* <div className='button-wrapper'> */}
           <Button
             onClick={() => {
               navigate('/howtouse');
