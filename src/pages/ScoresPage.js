@@ -57,6 +57,26 @@ const ScoresPage = (props) => {
           ))}
         </div>
       </Content>
+
+      <Content position='bottom'>
+        <div className={styles.buttonWrapper}>
+          <Button
+            onClick={() => {
+              //
+            }}
+          >
+            Next Round
+          </Button>
+          <Button
+            buttonType='text'
+            onClick={() => {
+              //
+            }}
+          >
+            End Game
+          </Button>
+        </div>
+      </Content>
     </Container>
   );
 };

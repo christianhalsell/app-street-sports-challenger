@@ -258,6 +258,16 @@ export const scoresSlice = createSlice({
       state.highestScore = highestValue;
       state.playersScores = tempFinalObj;
       // state.round = gameRound;
+    },
+    nextRound: (state, action) => {
+      const nextTeamsRound = createTeams(state.playersCount, state.teamsCount);
+      const nextScoresRound = createRoundScores(state.teamsCount);
+
+      state.clearInputs = false;
+      state.roundSubmitDisabled = true;
+      state.scoresRound = nextScoresRound;
+      state.teamsRound = nextTeamsRound;
+      state.round += 1;
     }
   },
   extraReducers: (builder) => {} // async reducers

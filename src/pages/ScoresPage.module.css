@@ -1,8 +1,3 @@
-/* .screen {
-  align-items: center;
-  flex: 1;
-  justify-content: center;
-} */
 .flatList {
   width: 100%;
 }
@@ -36,12 +31,9 @@
 }
 .playerScoreArea_ScoreText {
   font-size: 26px;
-  /* font-family: 'open-sans-bold'; */
   text-align: right;
 }
-.buttonsWrapper {
-  flex-direction: 'column';
-  justify-content: 'space-between';
-  /* margin: Layout.ButtonMarginVertical 0;
-  width: Layout.ButtonSingleWidth; */
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
 }
