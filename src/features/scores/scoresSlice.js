@@ -283,6 +283,7 @@ export const {
   setTeams,
   addNames,
   addScore,
-  addRoundScores
+  addRoundScores,
+  nextRound
 } = scoresSlice.actions;
 export default scoresSlice.reducer;

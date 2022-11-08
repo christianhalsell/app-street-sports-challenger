@@ -24,9 +24,9 @@ function App() {
             <Route path='/howtouse' element={<HowToUsePage />} />
             <Route path='/inputaddplayers' element={<InputAddPlayersPage />} />
             <Route path='/nameentry' element={<NameEntryPage />} />
-            <Route path='/finalscores' element={<FinalScoresPage />} />
-            <Route path='/scores' element={<ScoresPage />} />
             <Route path='/rounds' element={<RoundsPage />} />
+            <Route path='/scores' element={<ScoresPage />} />
+            <Route path='/finalscores' element={<FinalScoresPage />} />
           </Routes>
         </div>
       </Router>

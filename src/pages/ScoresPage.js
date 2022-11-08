@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { nextRound } from '../features/scores/scoresSlice';
 
 import RoundCard from '../components/RoundCard';
 import Container from '../components/Container';
@@ -62,7 +63,8 @@ const ScoresPage = (props) => {
         <div className={styles.buttonWrapper}>
           <Button
             onClick={() => {
-              //
+              dispatch(nextRound());
+              navigate('/rounds');
             }}
           >
             Next Round
