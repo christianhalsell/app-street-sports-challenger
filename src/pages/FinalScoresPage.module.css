@@ -11,13 +11,13 @@
   color: white;
   font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 32px;
-  margin-bottom: 20;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 .winnersList {
   color: white;
   margin-bottom: 4px;
-  font-family: 'OpenSans-Bold';
+  /* font-family: 'OpenSans-Bold'; */
   font-size: 20px;
 }
 .finalHighScoreText {
