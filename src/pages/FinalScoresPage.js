@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { nextRound } from '../features/scores/scoresSlice';
 
 import RoundCard from '../components/RoundCard';
 import Container from '../components/Container';
@@ -28,7 +27,7 @@ const FinalScoresPage = (props) => {
   return (
     <Container>
       <Header
-        title='Final'
+        title='Final Scores'
         leftContent={
           ''
           // <Button buttonType='text' onClick={() => navigate(-1)}>
@@ -86,7 +85,7 @@ const FinalScoresPage = (props) => {
           <Button
             buttonType='text'
             onClick={() => {
-              navigate('/final');
+              navigate('/');
             }}
           >
             Back to Home

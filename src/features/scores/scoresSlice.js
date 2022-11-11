@@ -98,12 +98,24 @@ export const scoresSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      state.round = DEFAULT_ROUNDS;
+      // state.round = DEFAULT_ROUNDS;
+      // state.playersCount = DEFAULT_PLAYERS_COUNT;
+      // state.teamsCount = DEFAULT_TEAMS_COUNT;
+      // state.pointsWin = DEFAULT_WIN_POINTS;
+      // state.pointsLoss = DEFAULT_LOSE_POINTS;
+      // state.pointsTie = DEFAULT_TIE_POINTS;
+      state.clearInputs = true;
+      state.highestScore = 0;
+      state.playersScores = [];
       state.playersCount = DEFAULT_PLAYERS_COUNT;
-      state.teamsCount = DEFAULT_TEAMS_COUNT;
       state.pointsWin = DEFAULT_WIN_POINTS;
       state.pointsLoss = DEFAULT_LOSE_POINTS;
       state.pointsTie = DEFAULT_TIE_POINTS;
+      state.round = DEFAULT_ROUNDS;
+      state.roundSubmitDisabled = true;
+      state.scoresRound = [];
+      state.teamsCount = DEFAULT_TEAMS_COUNT;
+      state.teamsRound = [];
     },
     addPlayers: (state, action) => {
       state.playersCount = parseInt(action.payload);
