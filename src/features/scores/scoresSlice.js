@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const DEFAULT_ROUNDS = 1;
-const DEFAULT_PLAYERS_COUNT = 4;
+const DEFAULT_PLAYERS_COUNT = 8;
 const DEFAULT_TEAMS_COUNT = 2;
 const DEFAULT_WIN_POINTS = 3;
 const DEFAULT_LOSE_POINTS = 1;
@@ -157,12 +157,6 @@ export const scoresSlice = createSlice({
       state.roundSubmitDisabled = tempRoundSubmitDisabled;
     },
     addRoundScores: (state, action) => {
-      console.log(
-        '%c%s',
-        'background-color: magenta; padding: 4px; color: black',
-        'Reached addRoundScores'
-      );
-
       const teamObj = [];
       const tempFinalObj = state.playersScores.sort((a, b) => a.id - b.id); // need to sort by id to reset order
       const roundScore = state.scoresRound;

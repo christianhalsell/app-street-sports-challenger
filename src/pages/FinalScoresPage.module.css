@@ -1,0 +1,58 @@
+.winnerArea {
+  background-color: none;
+  background-image: linear-gradient(
+    var(--orange-background-gradient-start),
+    var(--orange-background-gradient-end)
+  );
+  align-items: center;
+  padding: 40px 10px;
+}
+.winnerAreaText {
+  color: white;
+  font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 32px;
+  margin-bottom: 20;
+  text-transform: uppercase;
+}
+.winnersList {
+  color: white;
+  margin-bottom: 4px;
+  font-family: 'OpenSans-Bold';
+  font-size: 20px;
+}
+.finalHighScoreText {
+  font-weight: bold;
+}
+.runnerupScoreArea {
+  align-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid var(--light-gray);
+  flex-direction: row;
+  padding: 7px 30px;
+}
+.runnerupScoreArea_Section {
+  flex: 1;
+  justify-content: center;
+}
+.runnerupScoreArea_NameText {
+  font-size: 16px;
+  text-align: left;
+}
+.runnerupScoreArea_ScoreText {
+  font-family: 'OpenSans-Bold';
+  font-size: 22px;
+  text-align: right;
+}
+.background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}

@@ -17,6 +17,7 @@
 .headerCenter {
   flex: 4;
   text-align: center;
+  font-family: 'OpenSans-Bold';
 }
 
 .headerRight {

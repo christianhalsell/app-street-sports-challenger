@@ -26,7 +26,7 @@ function App() {
             <Route path='/nameentry' element={<NameEntryPage />} />
             <Route path='/rounds' element={<RoundsPage />} />
             <Route path='/scores' element={<ScoresPage />} />
-            <Route path='/finalscores' element={<FinalScoresPage />} />
+            <Route path='/final' element={<FinalScoresPage />} />
           </Routes>
         </div>
       </Router>

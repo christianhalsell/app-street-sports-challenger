@@ -72,7 +72,7 @@ const ScoresPage = (props) => {
           <Button
             buttonType='text'
             onClick={() => {
-              //
+              navigate('/final');
             }}
           >
             End Game
