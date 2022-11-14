@@ -1,0 +1,13 @@
+.textWrapper {
+  text-align: left;
+}
+.paragraph {
+  font-size: 18px;
+  margin: 14px 0;
+}
+.titleTwo {
+  font-size: 24px;
+  margin: 20px 0 14px;
+  font-family: 'OpenSans-Bold';
+  font-weight: 'bold';
+}
