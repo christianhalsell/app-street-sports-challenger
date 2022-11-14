@@ -35,13 +35,7 @@ const RoundsPage = () => {
     <Container>
       <Header
         title={`Round ${round}`}
-        leftContent={
-          ''
-          // <Button buttonType='text' onClick={() => navigate(-1)}>
-          //   <FaLessThan size={16} />{' '}
-          //   <span style={{ paddingLeft: 6 }}>Back</span>
-          // </Button>
-        }
+        leftContent={''}
         rightContent={
           <Button buttonType='text' onClick={() => openModal()}>
             <FaHome size={26} />

@@ -80,7 +80,7 @@ const createRoundScores = (teamsCount) => {
 
 // Check for empty scores
 const enableSubmitScoresCheck = (scoresRound) => {
-  const tempArray = JSON.parse(JSON.stringify(scoresRound)); // TODO: find other way to do this
+  const tempArray = JSON.parse(JSON.stringify(scoresRound));
 
   for (let i = 0; i < tempArray.length; i++) {
     for (let j = 0; j < tempArray[i].length; j++) {
@@ -98,12 +98,6 @@ export const scoresSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      // state.round = DEFAULT_ROUNDS;
-      // state.playersCount = DEFAULT_PLAYERS_COUNT;
-      // state.teamsCount = DEFAULT_TEAMS_COUNT;
-      // state.pointsWin = DEFAULT_WIN_POINTS;
-      // state.pointsLoss = DEFAULT_LOSE_POINTS;
-      // state.pointsTie = DEFAULT_TIE_POINTS;
       state.clearInputs = true;
       state.highestScore = 0;
       state.playersScores = [];

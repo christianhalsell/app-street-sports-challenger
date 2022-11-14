@@ -46,13 +46,7 @@ const ScoresPage = (props) => {
     <Container>
       <Header
         title={`Round ${round} Scores`}
-        leftContent={
-          ''
-          // <Button buttonType='text' onClick={() => navigate(-1)}>
-          //   <FaLessThan size={16} />{' '}
-          //   <span style={{ paddingLeft: 6 }}>Back</span>
-          // </Button>
-        }
+        leftContent={''}
         rightContent={
           <Button buttonType='text' onClick={() => openModal()}>
             <FaHome size={26} />
@@ -91,7 +85,6 @@ const ScoresPage = (props) => {
           <Button
             buttonType='text'
             onClick={() => {
-              // navigate('/final');
               openEndGameModal();
             }}
           >

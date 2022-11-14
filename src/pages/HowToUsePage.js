@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { FaLessThan, FaHome } from 'react-icons/fa';
+import React from 'react';
+import { FaLessThan } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 import Container from '../components/Container';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import Button from '../components/Button';
-import PlayerInputForm from '../components/PlayerInputForm';
-import Modal from '../components/Modal';
 
 import styles from './HowToUsePage.module.css';
 
@@ -23,12 +21,7 @@ const HowToUsePage = () => {
             <span style={{ paddingLeft: 6 }}>Home</span>
           </Button>
         }
-        rightContent={
-          ''
-          // <Button buttonType='text' onClick={() => navigate('/')}>
-          //   <FaHome size={26} />
-          // </Button>
-        }
+        rightContent={''}
       />
       <Content>
         <div className={styles.textWrapper}>

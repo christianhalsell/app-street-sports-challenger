@@ -40,12 +40,7 @@ const InputAddPlayersPage = () => {
             <span style={{ paddingLeft: 6 }}>Back</span>
           </Button>
         }
-        rightContent={
-          ''
-          // <Button buttonType='text' onClick={() => navigate('/')}>
-          //   <FaHome size={26} />
-          // </Button>
-        }
+        rightContent={''}
       />
       <Content>
         <PlayerInputForm setModalMessage={setModalMessage} />
