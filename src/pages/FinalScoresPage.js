@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,10 +8,12 @@ import Container from '../components/Container';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import Button from '../components/Button';
+import Modal from '../components/Modal';
 
 import styles from './FinalScoresPage.module.css';
 
 const FinalScoresPage = (props) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -23,6 +25,14 @@ const FinalScoresPage = (props) => {
   const sortedPlayersScores = [...playersScores].sort(
     (a, b) => b.score - a.score
   );
+
+  const openModal = useCallback(() => {
+    setModalIsOpen(true);
+  }, [setModalIsOpen]);
+
+  const closeModal = useCallback(() => {
+    setModalIsOpen(false);
+  }, [setModalIsOpen]);
 
   return (
     <Container>
@@ -36,7 +46,7 @@ const FinalScoresPage = (props) => {
           // </Button>
         }
         rightContent={
-          <Button buttonType='text' onClick={() => navigate('/')}>
+          <Button buttonType='text' onClick={() => openModal()}>
             <FaHome size={26} />
           </Button>
         }
@@ -92,6 +102,14 @@ const FinalScoresPage = (props) => {
           </Button>
         </div>
       </Content>
+      <Modal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        modalMessage='Going to the home screen will cancel current game. Continue?'
+        modalTitle='Warning'
+        modalType='confirm'
+        modalConfirm={() => navigate('/')}
+      />
     </Container>
   );
 };

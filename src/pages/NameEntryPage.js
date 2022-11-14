@@ -20,7 +20,6 @@ const NameEntryPage = () => {
   const { playersCount } = useSelector((state) => state.scores);
 
   // State
-  // const [modalMessage, setModalMessage] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [playerNames, setPlayerNames] = useState(
     Array.from({ length: playersCount })
