@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Button from '../components/Button';
+import Button from './Button';
 
 import Colors from '../constants/Colors';
-import styles from './ErrorModal.module.css';
+import styles from './Modal.module.css';
 
 const customStyles = {
   content: {
@@ -25,7 +25,14 @@ const customStyles = {
   }
 };
 
-const ErrorModal = ({ modalIsOpen, closeModal, modalTitle, modalMessage }) => {
+const ErrorModal = ({
+  modalIsOpen,
+  closeModal,
+  modalTitle,
+  modalMessage,
+  modalType,
+  modalConfirm
+}) => {
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -37,8 +44,11 @@ const ErrorModal = ({ modalIsOpen, closeModal, modalTitle, modalMessage }) => {
       <div className={styles.content}>{modalMessage}</div>
       <div className={styles.bottom}>
         <Button buttonType='text' onClick={closeModal}>
-          Close
+          {modalType === 'confirm' ? 'Cancel' : 'Close'}
         </Button>
+        {modalType === 'confirm' ? (
+          <Button onClick={modalConfirm}>OK</Button>
+        ) : null}
       </div>
     </Modal>
   );

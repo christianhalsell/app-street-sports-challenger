@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import Content from '../components/Content';
 import Button from '../components/Button';
 import PlayerInputForm from '../components/PlayerInputForm';
-import ErrorModal from '../components/ErrorModal';
+import Modal from '../components/Modal';
 
 const InputAddPlayersPage = () => {
   const [modalMessage, setModalMessage] = useState(null);
@@ -49,7 +49,7 @@ const InputAddPlayersPage = () => {
       />
       <Content>
         <PlayerInputForm setModalMessage={setModalMessage} />
-        <ErrorModal
+        <Modal
           modalIsOpen={modalIsOpen}
           closeModal={closeModal}
           modalMessage={modalMessage}

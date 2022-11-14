@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaLessThan, FaHome } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +8,7 @@ import Container from '../components/Container';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import Button from '../components/Button';
+import Modal from '../components/Modal';
 
 import styles from './NameEntryPage.module.css';
 
@@ -19,9 +20,19 @@ const NameEntryPage = () => {
   const { playersCount } = useSelector((state) => state.scores);
 
   // State
+  // const [modalMessage, setModalMessage] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [playerNames, setPlayerNames] = useState(
     Array.from({ length: playersCount })
   );
+
+  const openModal = useCallback(() => {
+    setModalIsOpen(true);
+  }, [setModalIsOpen]);
+
+  const closeModal = useCallback(() => {
+    setModalIsOpen(false);
+  }, [setModalIsOpen]);
 
   // Add names to playerNames state
   const nameInputHandler = (e, index) => {
@@ -43,7 +54,7 @@ const NameEntryPage = () => {
           </Button>
         }
         rightContent={
-          <Button buttonType='text' onClick={() => navigate('/')}>
+          <Button buttonType='text' onClick={() => openModal()}>
             <FaHome size={26} />
           </Button>
         }
@@ -79,6 +90,14 @@ const NameEntryPage = () => {
           </Button>
         </div>
       </Content>
+      <Modal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        modalMessage='Going to the home screen will cancel current game. Continue?'
+        modalTitle='Warning'
+        modalType='confirm'
+        modalConfirm={() => navigate('/')}
+      />
     </Container>
   );
 };
