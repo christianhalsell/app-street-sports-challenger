@@ -15,6 +15,7 @@ import styles from './ScoresPage.module.css';
 
 const ScoresPage = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [endGameModalIsOpen, setEndGameModalIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -32,6 +33,14 @@ const ScoresPage = (props) => {
   const closeModal = useCallback(() => {
     setModalIsOpen(false);
   }, [setModalIsOpen]);
+
+  const openEndGameModal = useCallback(() => {
+    setEndGameModalIsOpen(true);
+  }, [setEndGameModalIsOpen]);
+
+  const closeEndGameModal = useCallback(() => {
+    setEndGameModalIsOpen(false);
+  }, [setEndGameModalIsOpen]);
 
   return (
     <Container>
@@ -82,7 +91,8 @@ const ScoresPage = (props) => {
           <Button
             buttonType='text'
             onClick={() => {
-              navigate('/final');
+              // navigate('/final');
+              openEndGameModal();
             }}
           >
             End Game
@@ -96,6 +106,14 @@ const ScoresPage = (props) => {
         modalTitle='Warning'
         modalType='confirm'
         modalConfirm={() => navigate('/')}
+      />
+      <Modal
+        modalIsOpen={endGameModalIsOpen}
+        closeModal={closeEndGameModal}
+        modalMessage='Going to the final screen will end current game. Continue?'
+        modalTitle='Warning'
+        modalType='confirm'
+        modalConfirm={() => navigate('/final')}
       />
     </Container>
   );
