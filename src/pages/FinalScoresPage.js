@@ -41,7 +41,7 @@ const FinalScoresPage = (props) => {
         leftContent={
           ''
           // <Button buttonType='text' onClick={() => navigate(-1)}>
-          //   <FaLessThan size={20} />{' '}
+          //   <FaLessThan size={16} />{' '}
           //   <span className={{ paddingLeft: 6 }}>Back</span>
           // </Button>
         }

@@ -10,18 +10,18 @@
 
 .headerLeft {
   display: flex;
-  flex: 1;
+  flex: 2;
   justify-content: flex-start;
 }
 
 .headerCenter {
-  flex: 4;
+  flex: 5;
   text-align: center;
   font-family: 'OpenSans-Bold';
 }
 
 .headerRight {
   display: flex;
-  flex: 1;
+  flex: 2;
   justify-content: flex-end;
 }
