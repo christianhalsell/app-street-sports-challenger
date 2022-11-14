@@ -46,9 +46,10 @@ const FinalScoresPage = (props) => {
           // </Button>
         }
         rightContent={
-          <Button buttonType='text' onClick={() => openModal()}>
-            <FaHome size={26} />
-          </Button>
+          ''
+          // <Button buttonType='text' onClick={() => openModal()}>
+          //   <FaHome size={26} />
+          // </Button>
         }
       />
       <Content background='full'>
