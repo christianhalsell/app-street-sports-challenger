@@ -1,57 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import {
+  // BrowserRouter as Router, // URL will navigate
+  MemoryRouter as Router, // URL will not navigate
+  Routes,
+  Route
+} from 'react-router-dom';
+
+import HomePage from './pages/HomePage';
+import HowToUsePage from './pages/HowToUsePage';
+import InputAddPlayersPage from './pages/InputAddPlayersPage';
+import FinalScoresPage from './pages/FinalScoresPage';
+import NameEntryPage from './pages/NameEntryPage';
+import ScoresPage from './pages/ScoresPage';
+import RoundsPage from './pages/RoundsPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div className='container'>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/howtouse' element={<HowToUsePage />} />
+            <Route path='/inputaddplayers' element={<InputAddPlayersPage />} />
+            <Route path='/nameentry' element={<NameEntryPage />} />
+            <Route path='/rounds' element={<RoundsPage />} />
+            <Route path='/scores' element={<ScoresPage />} />
+            <Route path='/final' element={<FinalScoresPage />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 

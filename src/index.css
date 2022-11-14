@@ -1,13 +1,58 @@
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('OpenSans-Regular'),
+    url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: local('OpenSans-Bold'),
+    url('./assets/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'OpenSans-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  /* Colors */
+  --alert-red: #f00;
+  --score-red: #f73a13;
+  --score-blue: #0378eb;
+  --warning-orange: #eb7603;
+
+  /* Grays */
+  --extra-dark-gray: #181818;
+  --dark-gray: #333;
+  --medium-gray: #666;
+  --light-gray: #ddd;
+  --extra-light-gray: #f7f7f7;
+
+  /* Gradients */
+  --green-background-gradient-start: #9ee77e;
+  --green-background-gradient-end: #2f7320;
+
+  --orange-background-gradient-start: #ff9400;
+  --orange-background-gradient-end: #f3693c;
+
+  /* Layouts */
+  --button-margin-vertical: 1.875rem;
+  --button-single-width: 50%;
+  --input-area-padding: 1.25rem;
+  --margin-bottom: 1.25rem;
+  --modal-top-margin: 3.125rem;
+  --padding: 0.625rem;
 }

@@ -1,0 +1,39 @@
+.flatList {
+  width: 100%;
+}
+.background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.submitButton {
+  flex: 1;
+  margin: 0 10px;
+}
+.playerScoreArea {
+  align-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: row;
+  padding: 14px 30px;
+}
+.playerScoreArea_Section {
+  flex: 1;
+  justify-content: center;
+}
+.playerScoreArea_NameText {
+  font-size: 18px;
+  text-align: left;
+}
+.playerScoreArea_ScoreText {
+  font-size: 26px;
+  text-align: right;
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}

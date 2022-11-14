@@ -1,0 +1,27 @@
+.header {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  padding: 10px;
+}
+
+.headerLeft {
+  display: flex;
+  flex: 2;
+  justify-content: flex-start;
+}
+
+.headerCenter {
+  flex: 5;
+  text-align: center;
+  font-family: 'OpenSans-Bold';
+}
+
+.headerRight {
+  display: flex;
+  flex: 2;
+  justify-content: flex-end;
+}

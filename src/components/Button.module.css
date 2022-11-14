@@ -1,0 +1,42 @@
+.button {
+  align-items: center;
+  background-color: var(--score-blue);
+  border-radius: 20px;
+  border-width: 0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-family: 'OpenSans-Bold', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 1.125rem;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  width: 60%;
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.alert {
+  background-color: var(--alert-red);
+  color: white;
+}
+
+.warning {
+  background-color: var(--warning-orange);
+  color: white;
+}
+
+.white {
+  background-color: white;
+  color: var(--score-blue);
+}
+
+.text {
+  background-color: transparent;
+  color: var(--score-blue);
+  padding: 0;
+  width: 'inherit';
+}

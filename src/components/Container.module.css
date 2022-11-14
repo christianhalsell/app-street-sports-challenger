@@ -1,0 +1,17 @@
+.container {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 1.125rem;
+  height: 100vh;
+  margin: 0 auto;
+  width: 660px;
+}
+
+@media (max-width: 660px) {
+  .container {
+    width: 100%;
+  }
+}

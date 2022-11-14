@@ -1,0 +1,9 @@
+.contentWrapper {
+  flex: 1;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
