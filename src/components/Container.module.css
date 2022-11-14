@@ -6,6 +6,7 @@
   font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.125rem;
   height: 100vh;
+  height: -webkit-fill-available;
   margin: 0 auto;
   width: 660px;
 }
