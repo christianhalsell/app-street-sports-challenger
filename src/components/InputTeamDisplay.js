@@ -72,6 +72,7 @@ const InputTeamDisplay = (props) => {
       <div className={styles.scoreWrapper}>
         <input
           className={styles.scoreInput}
+          inputMode='numeric'
           maxLength={2}
           onChange={numberInputHandler}
           value={enteredValue}
