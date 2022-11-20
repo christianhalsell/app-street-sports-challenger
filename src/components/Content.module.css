@@ -44,9 +44,3 @@
   justify-content: flex-end;
   flex: 1;
 }
-
-@media (max-width: 660px) {
-  .content {
-    padding-bottom: 90px;
-  }
-}
