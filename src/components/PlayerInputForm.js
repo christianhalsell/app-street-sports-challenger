@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  reset,
   addPlayers,
   addTeams,
   addWinPoints,
