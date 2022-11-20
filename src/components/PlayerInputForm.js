@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  reset,
   addPlayers,
   addTeams,
   addWinPoints,
@@ -136,6 +135,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
           <div className={styles.inputArea}>
             <input
               className={styles.inputBox}
+              inputMode='numeric'
               maxLength={2}
               onChange={playersInputHandler}
               value={numberOfPlayersValue}
@@ -148,6 +148,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
           <div className={styles.inputArea}>
             <input
               className={styles.inputBox}
+              inputMode='numeric'
               maxLength={2}
               onChange={teamsInputHandler}
               value={numberOfTeamsValue}
@@ -163,6 +164,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
           <div className={styles.inputArea}>
             <input
               className={styles.inputBox}
+              inputMode='numeric'
               maxLength={2}
               onChange={winPointsInputHandler}
               value={winPointsValue}
@@ -176,6 +178,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
           <div className={styles.inputArea}>
             <input
               className={styles.inputBox}
+              inputMode='numeric'
               maxLength={2}
               onChange={lossPointsInputHandler}
               value={lossPointsValue}
@@ -189,6 +192,7 @@ const PlayerInputForm = ({ setModalMessage }) => {
           <div className={styles.inputArea}>
             <input
               className={styles.inputBox}
+              inputMode='numeric'
               maxLength={2}
               onChange={tiePointsInputHandler}
               value={tiePointsValue}

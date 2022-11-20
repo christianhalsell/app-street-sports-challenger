@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Container from '../components/Container';
 import Content from '../components/Content';
 import Button from '../components/Button';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { reset } from '../features/scores/scoresSlice';
 
 import styles from './HomePage.module.css';
