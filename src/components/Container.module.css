@@ -6,7 +6,6 @@
   font-family: 'OpenSans-Regular', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.125rem;
   height: 100vh;
-  /* height: -webkit-fill-available; */
   margin: 0 auto;
   width: 660px;
 }
@@ -14,5 +13,11 @@
 @media (max-width: 660px) {
   .container {
     width: 100%;
+  }
+  @supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */
+    .container {
+      height: -webkit-fill-available;
+    }
   }
 }
